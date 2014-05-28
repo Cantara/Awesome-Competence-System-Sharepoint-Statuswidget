@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" 
+        Id="afaa43e8-dd9d-43a4-80ed-388e58668be7" 
+        solutionId="afaa43e8-dd9d-43a4-80ed-388e58668be7" 
+        xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" 
+        name="ProfileStatus"
+        sharePointProductVersion="15.0">
+  <features>
+        <featureReference itemId="19c3828f-6327-4243-9105-b690de5da30e" />
+  </features>
+</package>

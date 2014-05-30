@@ -13,8 +13,10 @@
     <script type="text/javascript" src="/_layouts/15/MicrosoftAjax.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script>
     <script type="text/javascript" src="/_layouts/15/sp.js"></script>
+    <script src="../Scripts/knockout-3.1.0.js"></script>
     <script src="../Scripts/ProfileStatus.js"></script>
     <script src="../Scripts/ProfileStatusViewModel.js"></script>
+    <script src="../Scripts/App.js"></script>
 
     <script type="text/javascript">
         'use strict';
@@ -38,12 +40,6 @@
             }
         })();
     </script>
-     <script type="text/javascript">
-         $(document).ready(function () {
-             ACSAppPart.ProfileStatusViewModel.load();
-             ko.applyBindings(ACSAppPart.ProfileStatusViewModel, $get("statusTable"));
-         });
-     </script>
 </head>
 <body>
     <div style='position: absolute; top: 15px; left: 0px'>

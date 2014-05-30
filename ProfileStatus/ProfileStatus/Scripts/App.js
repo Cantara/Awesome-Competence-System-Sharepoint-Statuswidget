@@ -1,4 +1,5 @@
 ﻿'use strict';
+var ACSAppPart = window.ACSAppPart || {}
 
 var context = SP.ClientContext.get_current();
 var user = context.get_web().get_currentUser();
@@ -17,7 +18,9 @@ function getUserName() {
 // This function is executed if the above call is successful
 // It replaces the contents of the 'message' element with the user name
 function onGetUserNameSuccess() {
-    $('#message').text('Hello ' + user.get_title());
+    //$('#message').text('Hello ' + user.get_title());
+    var usernamex = user.get_title();
+    ACSAppPart.ProfileStatusViewModel.load(usernamex);
 }
 
 // This function is executed if the above call fails

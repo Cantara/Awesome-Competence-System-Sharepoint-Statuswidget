@@ -7,9 +7,12 @@ window.ACSAppPart.ProfileStatus = function (pc, lu) {
     var lastupdated = 'undefined'
 
     // Constructor
+    // Profile completeness in percent
     percent = pc;
+    // Date when the profile was last updated
     lastupdated = lu;
-    cstatus = lu - (new Date().getTime() / 1000);
+    // Number of days since last update
+    cstatus = Math.ceil((new Date().getTime() - lu.getTime()) / (1000 * 60 * 60 * 24));
 
     get_percent = function () { return percent; },
     get_lastupdated = function () { return lastupdated; },

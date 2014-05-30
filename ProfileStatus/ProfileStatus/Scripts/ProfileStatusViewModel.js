@@ -2,12 +2,14 @@
 var ACSAppPart = window.ACSAppPart || {}
 ACSAppPart.ProfileStatusViewModel = function () {
     // Private members
+    var email
     var profileStats = ko.observableArray(),
     get_profileStats = function () { return profileStats; },
-    load = function () {
+    load = function (useremail) {
+        email = useremail;
         $.ajax(
         {
-            url: 'https://acssolr:acssolr@cv.altran.se/solr/acs/select?q=oscar.arnez@altran.com&wt=json&indent=true&fl=rendered',
+            url: 'https://cv.altran.se/solr/acs/select?q=oscar.arnez@altran.com&wt=json&indent=true&fl=rendered',
             type: "GET",
             headers: {
                 "accept": "application/json;odata=verbose",
@@ -21,7 +23,7 @@ ACSAppPart.ProfileStatusViewModel = function () {
         var results = data.d.results;
         profileStats.removeAll();
         for (var i = 0; i < results.length; i++) {
-            contacts.push(
+            profileStats.push(
             new ACSAppPart.ProfileStatus(
             results[i].Percent,
             results[i].LastUpdated));

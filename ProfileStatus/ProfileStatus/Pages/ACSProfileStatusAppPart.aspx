@@ -52,7 +52,7 @@
             <tbody id="statusTable" data-bind="foreach: get_profileStats()">
             <tr>
                 <td>Status:</td>
-                <td><span data-bind="text: get_cstatus()"></span></td>
+                <td><img data-bind="attr: { src: get_statusflag() }"/></td>
             </tr>
             <tr>
                 <td>Profile completed to:</td>

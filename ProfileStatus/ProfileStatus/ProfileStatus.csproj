@@ -50,7 +50,11 @@
     </None>
     <Content Include="ACSProfileStatusAppPart\Elements.xml">
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
+      <SubType>Designer</SubType>
     </Content>
+    <Content Include="Images\icon_flagga_green.png" />
+    <Content Include="Images\icon_flagga_red.png" />
+    <Content Include="Images\icon_flagga_yellow.png" />
     <Content Include="Pages\ACSProfileStatusAppPart.aspx" />
     <Content Include="Pages\Elements.xml" />
     <Content Include="Pages\Default.aspx" />

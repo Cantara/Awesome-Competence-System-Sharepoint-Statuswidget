@@ -2,5 +2,8 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Images">
     <File Path="Images\AppIcon.png" Url="Images/AppIcon.png" ReplaceContent="TRUE" />
+    <File Path="Images\icon_flagga_green.png" Url="Images/icon_flagga_green.png" ReplaceContent="TRUE" />
+    <File Path="Images\icon_flagga_red.png" Url="Images/icon_flagga_red.png" ReplaceContent="TRUE" />
+    <File Path="Images\icon_flagga_yellow.png" Url="Images/icon_flagga_yellow.png" ReplaceContent="TRUE" />
   </Module>
 </Elements>

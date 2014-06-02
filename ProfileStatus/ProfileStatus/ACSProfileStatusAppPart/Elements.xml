@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ClientWebPart Name="ACSProfileStatusAppPart" Title="ACSProfileStatusAppPart" Description="ACSProfileStatusAppPart Description" DefaultWidth="300" DefaultHeight="200">
+  <ClientWebPart Name="ACSProfileStatusAppPart" Title="ACS Profile Status AppPart" Description="This app displays the profile status of the logged in user." DefaultWidth="300" DefaultHeight="200">
 
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_

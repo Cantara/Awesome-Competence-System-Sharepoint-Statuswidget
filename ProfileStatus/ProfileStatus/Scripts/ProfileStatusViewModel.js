@@ -7,10 +7,10 @@ ACSAppPart.ProfileStatusViewModel = function () {
     get_profileStats = function () { return profileStats; },
 
     load = function (useremail) {
-        var queryx = useremail + "&wt=json&indent=true&fl=rendered";
+        var queryx = useremail;
         $.ajax({
             url: 'https://cv.altran.se/solr/acs/select',
-            data: { 'wt': 'json', 'q': queryx },
+            data: { 'wt': 'json', 'q': queryx, 'indent': 'true', 'fl': 'rendered' },
             success: function (data) {
                 RenderResults(data);
                 ko.applyBindings(ACSAppPart.ProfileStatusViewModel);
@@ -29,17 +29,18 @@ ACSAppPart.ProfileStatusViewModel = function () {
             var prf = data.response.docs;
             for (var i = 0, prflength = prf.length; i < prflength; i++) {
                 var profile = $.parseJSON(data.response.docs[i].rendered);
-                var percx = profile.percent + " %";
+                var percentx = profile.completeness.percent + " %";
+                var lasteditedx = new Date(profile.last_edited);
                 profileStats.push(
                     new ACSAppPart.ProfileStatus(
-                    get_flag(profile.last_edited),
-                    profile.percent,
+                    get_flag(lasteditedx),
+                    percentx,
                     profile.last_edited));
             }
         }
         else {
             var lastupdate = new Date();
-            var perc = "80" + " %";
+            var perc = "0" + " %";
             lastupdate.setDate(lastupdate.getDate() - 10);
             var lastupdatefm = lastupdate.yyyymmdd();
             profileStats.push(

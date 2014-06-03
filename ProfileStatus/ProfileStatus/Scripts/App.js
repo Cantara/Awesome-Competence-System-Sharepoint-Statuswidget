@@ -20,9 +20,7 @@ function getUserName() {
 
 // This function is executed if the above call is successful
 // It replaces the contents of the 'message' element with the user name
-function onGetUserNameSuccess() {
-    //$('#message').text('Hello ' + user.get_title());
-    
+function onGetUserNameSuccess() {   
     um = user.get_email();
     ACSAppPart.ProfileStatusViewModel.load(um);
 }
@@ -34,7 +32,6 @@ function onGetUserNameFail(sender, args) {
 
 function getQueryStringParameter(urlParameterKey) {
     var params = document.URL.split('?')[1].split('&');
-    var strParams = '';
     for (var i = 0; i < params.length; i = i + 1) {
         var singleParam = params[i].split('=');
         if (singleParam[0] == urlParameterKey)

@@ -66,7 +66,7 @@ ACSAppPart.ProfileStatusViewModel = function () {
         cstatus = Math.ceil(numberofdays / (1000 * 60 * 60 * 24)),
         lowerLimit = parseInt(getQueryStringParameter("LowerLimit"),10),
         upperLimit = parseInt(getQueryStringParameter("UpperLimit"),10);
-        if ((upperLimit <= lowerLimit) || (isNaN(lowerLimit) && isNaN(upperLimit) )) {
+        if ((upperLimit <= lowerLimit) || (isNaN(lowerLimit) || isNaN(upperLimit) )) {
             // Set default values
             lowerLimit = 90;
             upperLimit = 120;

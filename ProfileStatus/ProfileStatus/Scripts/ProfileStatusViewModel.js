@@ -30,7 +30,9 @@ ACSAppPart.ProfileStatusViewModel = function () {
             for (var i = 0, prflength = prf.length; i < prflength; i++) {
                 var profile = $.parseJSON(data.response.docs[i].rendered);
                 var percentx = profile.completeness.percent + " %";
-                var lasteditedx = new Date(profile.last_edited);
+                var  datex = profile.last_edited;
+                var parts = datex.split("/");
+                var lasteditedx = new Date(parts[2], parts[0] - 1, parts[1]);
                 profileStats.push(
                     new ACSAppPart.ProfileStatus(
                     get_flag(lasteditedx),
@@ -62,9 +64,9 @@ ACSAppPart.ProfileStatusViewModel = function () {
         dateupdated = lastupdate.getTime(),
         numberofdays = (datenow - dateupdated),
         cstatus = Math.ceil(numberofdays / (1000 * 60 * 60 * 24)),
-        lowerLimit = parseInt(getQueryStringParameter("LowerLimit")),
-        upperLimit = parseInt(getQueryStringParameter("UpperLimit"));
-        if (upperLimit <= lowerLimit) {
+        lowerLimit = parseInt(getQueryStringParameter("LowerLimit"),10),
+        upperLimit = parseInt(getQueryStringParameter("UpperLimit"),10);
+        if ((upperLimit <= lowerLimit) || (isNaN(lowerLimit) && isNaN(upperLimit) )) {
             // Set default values
             lowerLimit = 90;
             upperLimit = 120;
